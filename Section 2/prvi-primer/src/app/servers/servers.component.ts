@@ -14,6 +14,10 @@ allowNewServer=false
    }
 
   ngOnInit(): void {
+    
   }
-
+  onCreateServer(){
+      this.serverCreation="Napravljen je server"
+    }
+serverCreation:string="Nije napravljen server"
 }

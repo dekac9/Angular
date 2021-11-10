@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
 })
 
 export class ServerComponent{
-  probaZaMetodu="OPALAC"
+  probaZaMetodu:string="OPALAC"
 serverId: number=10;
 serverStatus:string='offline'
 getServerStatus(){
