@@ -1,7 +1,12 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer"
 (click)="onCreateServer()">Dodaj server</button>
-<label>Ime servera: {{imeServera}}</label>
-<input type="text" class="form-controll" (input)="onUpdateServerName($event)">
+<label>Ime servera:</label>
+<input type="text" class="form-controll" (input)="onUpdateServerName($event)"><hr>
+<input 
+type="text" 
+class="form-controll" 
+[(ngModel)]="imeServera"
+>
 <p>servers works!</p>
 <!-- <p [innerText]="allowNewServer"></p> -->
 <p>{{serverCreation}}</p>

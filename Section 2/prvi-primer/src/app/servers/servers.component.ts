@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-  imeServera="";
+  imeServera="Test server";
 allowNewServer=false
   constructor() {
     setTimeout(() => {
@@ -24,9 +25,9 @@ allowNewServer=false
     }
 serverCreation:string="Nije napravljen server"
 
-onUpdateServerName(event:any){
+onUpdateServerName(event:Event){
 // this.serverCreation=event.data
-this.imeServera=event.target.value
+this.imeServera=(<HTMLInputElement>event.target).value
 //console.log(event.target.value)
 }
 
