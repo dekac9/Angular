@@ -1,5 +1,7 @@
 <button class="btn btn-primary" [disabled]="!allowNewServer"
 (click)="onCreateServer()">Dodaj server</button>
+<label>Ime servera: {{imeServera}}</label>
+<input type="text" class="form-controll" (input)="onUpdateServerName($event)">
 <p>servers works!</p>
 <!-- <p [innerText]="allowNewServer"></p> -->
 <p>{{serverCreation}}</p>
