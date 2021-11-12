@@ -19,7 +19,7 @@ allowNewServer=false
     
   }
   onCreateServer(){
-      this.serverCreation="Napravljen je server"+this.imeServera;
+      this.serverCreation="Napravljen je server "+this.imeServera;
       
 
     }
