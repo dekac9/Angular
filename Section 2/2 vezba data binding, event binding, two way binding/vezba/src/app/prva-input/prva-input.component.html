@@ -1,6 +1,19 @@
 <div id="prvi" class="mb-12 mt-4 mb-2">
-  <label for="exampleFormControlInput1" class="form-label">Uneseni username</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Username" (input)="omoguciKlik($event)">
+  <label for="exampleFormControlInput1" class="form-label">String binding</label>
+  <input 
+  type="text" class="form-control" id="exampleFormControlInput1" placeholder="Username" 
+  (input)="omoguciKlik($event)" (input)="promeni($event)"
+   >
+   <hr>
+  <label for="exampleFormControlInput2" class="form-label">Two-way-binding</label>
+  <input 
+  type="text" class="form-control" id="exampleFormControlInput2" placeholder="Username" 
+  [(ngModel)]="usernameString"
+   >
+  <p>Trenutno vrednost stringa: {{usernameString}}</p>
+  
+
   <hr>
-  <button class="btn btn-warning btn-lg" [disabled]="!nestoUpisano">KLIKNI ZA UNOS USERNAME-A</button>
+  
+  <button class="btn btn-warning btn-lg" [disabled]="!nestoUpisano" (click)="obrisiString()">KLIKNI ZA UNOS USERNAME-A</button>
 </div>

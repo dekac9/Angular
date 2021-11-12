@@ -16,9 +16,23 @@ omoguciKlik(vrednost:any){
   }
 
 }
+
+promeni(inputValue:any){
+  this.usernameString=inputValue.target.value
+  
+}
+
+obrisiString(){
+  this.usernameString=""
+  this.nestoUpisano=false
+  alert("Obrisan je string")
+}
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }
