@@ -1,0 +1,6 @@
+<div id="prvi" class="mb-12 mt-4 mb-2">
+  <label for="exampleFormControlInput1" class="form-label">Uneseni username</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Username" (input)="omoguciKlik($event)">
+  <hr>
+  <button class="btn btn-warning btn-lg" [disabled]="!nestoUpisano">KLIKNI ZA UNOS USERNAME-A</button>
+</div>
