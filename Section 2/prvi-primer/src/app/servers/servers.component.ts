@@ -10,6 +10,7 @@ export class ServersComponent implements OnInit {
   imeServera="Test server";
   serverCreated=false;
 allowNewServer=false;
+servers=['TEST', 'TEST2']
   constructor() {
     setTimeout(() => {
       this.allowNewServer=true
@@ -21,6 +22,7 @@ allowNewServer=false;
   }
   onCreateServer(){
       this.serverCreation="Napravljen je server "+this.imeServera;
+      this.servers.push(this.imeServera);
       this.serverCreated=true
 
     }
