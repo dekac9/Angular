@@ -1,1 +1,22 @@
 <p>komponenta works!</p>
+
+
+<button class="btn btn-primary" (click)="toggluj()">Display details</button>
+<p [ngClass]="{hidden:toggle}">LOZINKA
+</p>
+<hr>
+<p  *ngFor="let elem of array" [ngStyle]='{backgroundColor:array[elem]>5?"blue":"green"}' [ngClass]='{belo:array[elem]>5}'>{{array[elem]}}</p>
+
+<!-- 
+<p *ngIf='array.length>5;else belo'></p>
+ <p >Secret password="Tuna"</p>
+  <p [ngClass]='{plavo:array.length>5}' >sasas</p>
+  </p>
+<ng-template #belo>
+<p>sasas</p>
+
+</ng-template> -->
+
+
+<!-- <p  *ngFor="let elem of array" [ngClass]='{plavo:array.length>5}'>{{array[elem]}}</p> -->
+
