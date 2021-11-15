@@ -5,7 +5,7 @@
 <p [ngClass]="{hidden:toggle}">LOZINKA
 </p>
 <hr>
-<p  *ngFor="let elem of array" [ngStyle]='{backgroundColor:array[elem]>5?"blue":"green"}' [ngClass]='{belo:array[elem]>5}'>{{array[elem]}}</p>
+<p  *ngFor="let elem of array; let i = index" [ngStyle]='{backgroundColor:i>5?"blue":"green"}' [ngClass]='{belo:i>5}'>{{array[elem]}}</p>
 
 <!-- 
 <p *ngIf='array.length>5;else belo'></p>
