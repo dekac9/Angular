@@ -9,4 +9,9 @@ class="form-controll"
 >
 <p>servers works!</p>
 <!-- <p [innerText]="allowNewServer"></p> -->
-<p>{{serverCreation}}</p>
+<!-- <p>{{serverCreation}}</p> -->
+<!-- ovo gore je zakomenterisano da bi se proradile direktive -->
+<p *ngIf="serverCreated;else noServer">Server je napravljen, ime servera je {{imeServera}}</p>
+<ng-template #noServer>
+<p >Server nije napravljen</p>
+</ng-template>
