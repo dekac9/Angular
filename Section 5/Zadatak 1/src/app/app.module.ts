@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { UnosComponent } from './unos/unos.component';
+import { IspisComponent } from './ispis/ispis.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UnosComponent,
+    IspisComponent
   ],
   imports: [
     BrowserModule,
