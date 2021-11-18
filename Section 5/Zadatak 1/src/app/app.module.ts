@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { UnosComponent } from './unos/unos.component';
-import { IspisComponent } from './ispis/ispis.component';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UnosComponent,
-    IspisComponent
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,
