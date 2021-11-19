@@ -24,5 +24,7 @@ export class AppComponent {
       content: blueprintData.serverContent
     });
   }
-  
+  ngOnDestroyFirst(){
+    this.serverElements.splice(0,1)
+  }
 }
