@@ -8,6 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class GameControllComponent implements OnInit {
 broj:number
+paran:true
 brojac:any
 @Output() slanjeBroja=new EventEmitter<number>()
   constructor() { }
@@ -17,6 +18,7 @@ brojac:any
 
   pokreni(){
     this.brojac=setInterval(()=>{this.broj=Math.round(Math.random()*10)
+      
   this.slanjeBroja.emit(this.broj)},1000);
 
   }
