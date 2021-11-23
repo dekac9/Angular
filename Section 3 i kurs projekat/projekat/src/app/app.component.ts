@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'projekat';
+aktivnost:string="recepies"
+
+  aktivno(aktivan){
+    console.log(aktivan);
+    this.aktivnost=aktivan
+    console.log(this.aktivnost);
+  }
 }

@@ -1,10 +1,10 @@
-<app-header></app-header>
+<app-header (kliknutLinkEmiter)="aktivno($event)"></app-header>
 
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recepies></app-recepies>
-      <app-shopping-list></app-shopping-list>
+      <app-recepies *ngIf="aktivnost==='recepies'|| aktivnost===''"></app-recepies>
+      <app-shopping-list *ngIf="aktivnost==='shoppingList'"></app-shopping-list>
     </div>
   </div>
 </div>

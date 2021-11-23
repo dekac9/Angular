@@ -10,6 +10,7 @@ export class GameControllComponent implements OnInit {
 broj:number
 paran:true
 brojac:any
+
 @Output() slanjeBroja=new EventEmitter<number>()
   constructor() { }
 
