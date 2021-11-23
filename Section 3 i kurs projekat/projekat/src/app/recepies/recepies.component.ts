@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecepiesComponent implements OnInit {
 
+selektovanRecept;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

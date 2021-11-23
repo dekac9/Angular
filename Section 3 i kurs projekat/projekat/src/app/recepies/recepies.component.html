@@ -1,9 +1,13 @@
 <div class="row">
   <div class="col-md-5">
-<app-recepie-list></app-recepie-list>
+<app-recepie-list (kliknut)="selektovanRecept=$event"></app-recepie-list>
   </div>
   <div class="col-md-7">
-<app-recepie-detail></app-recepie-detail>
+<app-recepie-detail *ngIf="selektovanRecept; else infoText" [selektovan]='selektovanRecept'></app-recepie-detail>
+<ng-template #infoText>
+  Unesi nesto
+</ng-template>
+
   </div>
 </div>
 
