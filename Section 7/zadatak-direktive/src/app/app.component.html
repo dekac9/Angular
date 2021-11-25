@@ -3,16 +3,31 @@
     <div class="col-xs-12">
       <button
         class="btn btn-primary"
-        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+        (click)="samoParni = !samoParni">Only show odd numbers</button>
       <br><br>
       <ul class="list-group">
+        <div *ngIf="!samoParni">
         <li
-          class="list-group-item">
+          class="list-group-item"
+          
+          *ngFor="let neparniBroj of neparniBrojevi"
+          [ngClass]="{neparni:neparniBroj%2!=0}"
+          >
+          {{neparniBroj}}
         </li>
+        </div>
+        <div *ngIf="samoParni">
+          <li class="list-group-item"
+          [ngClass]="{pari:parni%2==0}"
+          *ngFor="let parni of parniBrojevi"
+          [ngStyle]="{backgroundColor:parni %2==0?'yellow':'blue'}"
+          >
+          {{parni}}
+        </li>
+        </div>
+
       </ul>
-      <ng-template [ngIf]="onlyOdd">
-        <p>Only odd</p>
-      </ng-template>
+
     </div>
   </div>
 </div>
