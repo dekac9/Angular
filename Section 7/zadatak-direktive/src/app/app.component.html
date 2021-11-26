@@ -6,7 +6,7 @@
         (click)="samoParni = !samoParni">Only show odd numbers</button>
       <br><br>
       <ul class="list-group">
-        <div *ngIf="!samoParni">
+        <!-- <div *ngIf="!samoParni">
         <li
           class="list-group-item"
           appBoljeOsvetli
@@ -16,6 +16,7 @@
           {{neparniBroj}}
         </li>
         </div>
+        -->
         <div *ngIf="samoParni">
           <li class="list-group-item"
           [ngClass]="{pari:parni%2==0}"
@@ -24,7 +25,19 @@
           >
           {{parni}}
         </li>
+        </div> 
+        
+      <div *appSuprotno="samoParni">
+        <li
+          class="list-group-item"
+          appBoljeOsvetli
+          *ngFor="let neparniBroj of neparniBrojevi"
+          [ngClass]="{neparni:neparniBroj%2!=0}"
+          >
+          {{neparniBroj}}
+        </li>
         </div>
+
 
       </ul>
 <p appBasicOsvetli>Osvetli me</p>

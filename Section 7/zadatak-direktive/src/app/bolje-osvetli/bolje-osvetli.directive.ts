@@ -25,13 +25,13 @@ brojac:number=0
   }
   @HostListener('mouseenter') mouseover(eventData: Event){
 //this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'pink', )
-this.backgroundColor='purple'
+this.backgroundColor=this.novaBoja
 this.brojac++
 console.log(this.brojac);
 }
 @HostListener('mouseleave') mouseleave(eventData: Event){
 //this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'orange', )
-this.backgroundColor='transparent'
+this.backgroundColor=this.defaultColor
 }
 }
 

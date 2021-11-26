@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BasicOsvetliDirektiva } from './osvetli/basic-osvetli.directive';
 import { BoljeOsvetliDirective } from './bolje-osvetli/bolje-osvetli.directive';
+import { SuprotnoDirective } from './suprotno.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicOsvetliDirektiva,
-    BoljeOsvetliDirective
+    BoljeOsvetliDirective,
+    SuprotnoDirective
   ],
   imports: [
     BrowserModule,
