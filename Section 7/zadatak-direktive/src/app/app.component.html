@@ -40,8 +40,20 @@
 
 
       </ul>
-<p appBasicOsvetli>Osvetli me</p>
-<p appBoljeOsvetli [defaultColor]="'red'" [novaBoja]="'grey'"> Osvetli mebolje</p>
+      <p appBasicOsvetli>Osvetli me</p>
+      <p appBoljeOsvetli [defaultColor]="'red'" [novaBoja]="'grey'"> Osvetli mebolje</p>
+      <div [ngSwitch]="value">
+      <p *ngSwitchCase="5">
+      Jeste
+      </p>
+      <p *ngSwitchCase="10">
+      Nije
+      </p>
+      <p *ngSwitchDefault>
+      default
+      </p>
+      </div>
     </div>
+
   </div>
 </div>

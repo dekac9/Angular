@@ -10,4 +10,5 @@ export class AppComponent {
   neparniBrojevi=[1,3,5];
   parniBrojevi=[2,4]
   onlyParni = false;
+  value:number=10
 }
