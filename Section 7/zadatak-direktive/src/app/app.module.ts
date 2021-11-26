@@ -4,10 +4,14 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { BasicOsvetliDirektiva } from './osvetli/basic-osvetli.directive';
+import { BoljeOsvetliDirective } from './bolje-osvetli/bolje-osvetli.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BasicOsvetliDirektiva,
+    BoljeOsvetliDirective
   ],
   imports: [
     BrowserModule,

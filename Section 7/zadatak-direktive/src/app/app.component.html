@@ -9,7 +9,7 @@
         <div *ngIf="!samoParni">
         <li
           class="list-group-item"
-          
+          appBoljeOsvetli
           *ngFor="let neparniBroj of neparniBrojevi"
           [ngClass]="{neparni:neparniBroj%2!=0}"
           >
@@ -27,7 +27,8 @@
         </div>
 
       </ul>
-
+<p appBasicOsvetli>Osvetli me</p>
+<p appBoljeOsvetli>Osvetli mebolje</p>
     </div>
   </div>
 </div>
