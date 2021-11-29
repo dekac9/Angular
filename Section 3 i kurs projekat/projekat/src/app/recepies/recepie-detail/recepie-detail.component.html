@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" >
   <div class="col-xs-12">
     <img [src]=selektovan.imagePath alt="{{selektovan.name}}" class="img-responsive" style="max-height: 50px;">
   </div>
@@ -12,12 +12,13 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <div class="btn-group open">
-      <button type="button" class="btn btn-primary dropdown-toggle">Manage recepie<span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Dodaj sastojak na shoping listu</a></li>
-        <li><a href="#">Ispravi recept</a></li>
-        <li><a href="#">Obrisi recept</a></li>
+    <div class="btn-group " (click)="temp()">
+      <button type="button" class="btn btn-primary dropdown-toggle" appDropdown>Manage recepie<span class="caret"></span></button>
+      <ul class="dropdown-menu"
+      >
+        <li><a class="dropdown-item" href="#">Dodaj sastojak na shoping listu</a></li>
+        <li><a class="dropdown-item" href="#">Ispravi recept</a></li>
+        <li><a class="dropdown-item" href="#">Obrisi recept</a></li>
       </ul>
       
     </div>

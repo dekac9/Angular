@@ -7,9 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RecepieDetailComponent implements OnInit {
 @Input() selektovan;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+temp(){
+  console.log("kliknuto!");
+}
 
 }
