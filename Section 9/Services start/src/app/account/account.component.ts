@@ -6,7 +6,7 @@ import { LoggingService } from '../logging.service';
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
-  providers:[LoggingService, AcountService]
+  //providers:[LoggingService]
 })
 export class AccountComponent {
   @Input() account: {name: string, status: string};
@@ -20,7 +20,8 @@ constructor(private loggingService:LoggingService, private accountService:Acount
  this.accountService.updateStatus(this.id,status)
  this.name=this.account.name
  //console.log(this.account.name);
-    this.loggingService.LogStatusChange(status,this.name)
+    //this.loggingService.LogStatusChange(status,this.name)
+    this.accountService.statusUpdated.emit(status)
   }
   
 }

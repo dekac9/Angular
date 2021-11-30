@@ -5,7 +5,7 @@ import { AcountService } from './acount.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers:[AcountService]
+
 })
 export class AppComponent implements OnInit{
 accounts :{name:string,status:string}[]=[]
