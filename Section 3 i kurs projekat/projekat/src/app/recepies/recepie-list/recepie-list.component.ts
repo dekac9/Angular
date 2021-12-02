@@ -1,4 +1,4 @@
-import { Component, OnInit , Output, EventEmitter} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Recepie } from '../recepie.model';
 import { RecepieService } from '../recepie.service';
 @Component({
@@ -7,7 +7,7 @@ import { RecepieService } from '../recepie.service';
   styleUrls: ['./recepie-list.component.css']
 })
 export class RecepieListComponent implements OnInit {
-  @Output() kliknut=new EventEmitter<any>()
+
 
 
 
@@ -20,10 +20,5 @@ recepies:Recepie[]=[];
 
 
 
-  saljiDalje(recept){
-    console.log(recept);
-    this.kliknut.emit(recept)
-    
-  }
 
 }

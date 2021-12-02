@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
+import { RecepieService } from '../../recepie.service';
 
 
 @Component({
@@ -8,15 +9,16 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class RecepieItemComponent implements OnInit {
 @Input() recepie
-@Output() podatak=new EventEmitter<void>()
 
-  constructor() { }
+
+  constructor(private recepieService:RecepieService) { }
 
   ngOnInit(): void {
   }
 
   kliknuto(){
-this.podatak.emit()
+    this.recepieService.selektovanRecept.emit(this.recepie)
+//this.podatak.emit()
 //console.log("objeasscscscct");
 
   }
