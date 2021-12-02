@@ -5,7 +5,7 @@ import { EventEmitter, Injectable} from '@angular/core';
 })
 export class UsersServiceService{
 
-  promeni=new EventEmitter<any>()
+  //promeni=new EventEmitter<any>()
   activeUsers= ['Max', 'Anna'];
   inactiveUsers =['Chris', 'Manu'];
 
