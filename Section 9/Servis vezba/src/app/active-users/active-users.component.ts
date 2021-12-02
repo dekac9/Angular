@@ -1,4 +1,5 @@
 import { Component, Input, OnInit} from '@angular/core';
+import { CounterServiceService } from '../counter-service.service';
 import { UsersServiceService } from '../users-service.service';
 
 @Component({
@@ -11,7 +12,9 @@ export class ActiveUsersComponent implements OnInit{
   
 
   //@Output() userSetToInactive = new EventEmitter<number>();
-constructor(private userSetToInactive:UsersServiceService){
+constructor(private userSetToInactive:UsersServiceService,
+            private brojac:CounterServiceService
+  ){
   
   this.userSetToInactive.promeni.subscribe(
   (primljeno)=>this.userSetToInactive.onSetToActive(primljeno)
@@ -22,8 +25,9 @@ ngOnInit() {
   
 }
 
-promeniuNeaktivno(broj){
-  this.userSetToInactive.promeni.emit(broj)
+promeniuNeaktivno(broj:number){
+  this.userSetToInactive.onSetToInactive(broj)
+  this.brojac.promenaBrojaca()
 }
 
 }
