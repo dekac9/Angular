@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild,ElementRef, Output} from '@angular/core';
 
 import { EventEmitter } from '@angular/core';
+import { Ingredient } from 'src/app/shared/ingrediant.model';
+import { ShoppingListService } from '../shopping-list.service';
 
 
 @Component({
@@ -11,17 +13,23 @@ import { EventEmitter } from '@angular/core';
 export class ShoppingEditComponent implements OnInit {
   @ViewChild("nameInput",{static:false}) primljenoName:ElementRef
   @ViewChild("amountInput",{static:false}) primljenoAmount:ElementRef
-@Output() promena= new EventEmitter<any>();
+
+
+
 
   tempIme:string
   tempKolicina:number
 
 
 
-  constructor() { }
+  constructor(private shoppingList:ShoppingListService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(){
+ 
+
+
+ 
+}
 // uzmiPodatke(nameInput:HTMLInputElement){
 // console.log(nameInput.value);
 // }
@@ -33,9 +41,16 @@ export class ShoppingEditComponent implements OnInit {
     console.log(this.tempIme);
     this.tempKolicina=this.primljenoAmount.nativeElement.value
   
-    console.log(this.tempKolicina);
+  //   console.log(this.tempKolicina);
+this.shoppingList.dodaj({name:this.tempIme,amount:this.tempKolicina})
+// this.promena.emit({name:this.tempIme,amount:this.tempKolicina})
 
-this.promena.emit({name:this.tempIme,amount:this.tempKolicina})
+
+  
+
+
+  // this.shoppingList.dodaj({name:this.tempIme,amount:this.tempKolicina})
+
   }
 
 }

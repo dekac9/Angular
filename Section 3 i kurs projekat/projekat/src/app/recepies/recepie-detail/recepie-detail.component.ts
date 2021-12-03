@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
+import { Recepie } from '../recepie.model';
 
 @Component({
   selector: 'app-recepie-detail',
@@ -8,12 +10,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RecepieDetailComponent implements OnInit {
 @Input() selektovan;
 
-  constructor() { }
+  constructor(private shoppingListService:ShoppingListService) { }
 
   ngOnInit(): void {
   }
 temp(){
   console.log("kliknuto!");
+}
+
+posaljiListi(){
+  this.selektovan.ingredients.map((elem)=>this.shoppingListService.dodaj(elem))
+
 }
 
 }

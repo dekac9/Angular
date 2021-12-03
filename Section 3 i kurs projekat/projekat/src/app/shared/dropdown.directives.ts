@@ -15,8 +15,8 @@ constructor(private elementRef:ElementRef){
 
 @HostListener('click',['$event']) togluj(){
 this.temp=this.elementRef.nativeElement.nextElementSibling
- this.temp2=this.elementRef.nativeElement.contains(event.target)
-console.log(this.temp2);
+//  this.temp2=this.elementRef.nativeElement.contains(event.target)
+// console.log(this.temp2);
 if(this.temp.className=="dropdown-menu"){
 this.temp.className="dropdown-menu show"
 }
