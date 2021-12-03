@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Ingredient } from 'src/app/shared/ingrediant.model';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
 import { Recepie } from '../recepie.model';
 
@@ -19,7 +20,7 @@ temp(){
 }
 
 posaljiListi(){
-  this.selektovan.ingredients.map((elem)=>this.shoppingListService.dodaj(elem))
+ this.selektovan.ingredients.map((elem:Ingredient[])=>this.shoppingListService.dodaj(elem))
 
 }
 
