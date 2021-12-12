@@ -8,14 +8,15 @@ import { ServersService } from './servers.service';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-  public servers: {id: number, name: string, status: string}[] = [];
+  public server: {id: number, name: string, status: string}[] = [];
 
   constructor(private serversService: ServersService, private router:Router) { }
 
   ngOnInit() {
-    this.servers = this.serversService.getServers();
+    this.server = this.serversService.getServers();
+    console.log(this.server);
   }
 onReload(){
-this.router.navigate(['/servers'])
+//this.router.navigate(['/servers'])
 }
 }
