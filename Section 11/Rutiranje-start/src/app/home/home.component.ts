@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  kaServeru(){
-this.ruta.navigate(['/servers'])
+  kaServeru(id:number){
+this.ruta.navigate(['/servers',id,'edit'],{queryParams:{allowEdit:'1'},fragment:'loading'})
   }
 }

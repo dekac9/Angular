@@ -2,6 +2,9 @@
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
       <a
+      [routerLink]="[ '/servers',server.id]"
+      [queryParams]="{alowEdit:'1'}"
+      fragment=loading
         href="#"
         class="list-group-item"
         *ngFor="let server of server">
@@ -16,7 +19,7 @@
     
     <app-edit-server></app-edit-server>
     <hr>
-    <app-server></app-server>
+    <!-- <app-server></app-server> -->
   </div>
 </div>
 
