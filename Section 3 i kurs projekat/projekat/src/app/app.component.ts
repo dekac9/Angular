@@ -10,8 +10,8 @@ export class AppComponent {
 aktivnost:string="recepies"
 
   aktivno(aktivan){
-    console.log(aktivan);
+    //console.log(aktivan);
     this.aktivnost=aktivan
-    console.log(this.aktivnost);
+    //console.log(this.aktivnost);
   }
 }
