@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { DropdownDirective } from './shared/dropdown.directives';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
+import { LandingComponent } from './landing/landing.component';
 
 
 
@@ -28,7 +29,8 @@ import { AppRoutingModule } from './app-routing.module';
     RecepieItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective
+    DropdownDirective,
+    LandingComponent
 
   ],
   imports: [

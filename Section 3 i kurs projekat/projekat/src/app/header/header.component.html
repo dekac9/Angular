@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default bg-light mb-3">
   <div class="container-fluid">
     <div class="navbar-header">
       <a href="#" class="navbar-brand">Recepie Book</a>
@@ -6,22 +6,21 @@
     </div>
 
     <div class="navbar-default">
-      <ul class="nav navbar-nav">
+      <ul class="nav nav-pills">
 
         <!-- stari nacin bez rutiranja -->
         <!-- <li><a href="#" (click)="kliknutLink('recepies')">Recepies</a></li>
         <li><a href="#" (click)="kliknutLink('shoppingList')">Shopping list</a></li> -->
-        <li><a href='#' (click)="kliknutLink('recepies')">Recepies</a></li>
-        <li><a href='#' (click)="kliknutLink('shoppingList')">Shopping list</a></li>
+        <li class="nav-item"><a class="nav-link active" [routerLink]="[ '/recepies']"  routerLinkActive="active">Recepies</a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="[ '/shoppingList']" routerLinkActive="active">Shopping list</a></li>
 
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown " >
-          <a href="#" class="dropdown-toggle" role="button" appDropdown>Manage<span class="caret"></span></a>
-          <ul class="dropdown-menu" >
-            <li><a href="#">Save Data</a></li>
-            <li><a href="#">Fetch Data</a></li>
-          </ul>
+      
+        <li class="nav-item dropdown" >
+          <a style="cursor: pointer" class="nav-link dropdown-toggle" role="button" appDropdown>Manage<span class="caret"></span></a>
+          <div class="dropdown-menu" >
+            <li><a class="dropdown-item" style="cursor: pointer">Save Data</a></li>
+            <li><a class="dropdown-item" style="cursor: pointer">Fetch Data</a></li>
+          </div>
         </li>
       </ul>
     </div>

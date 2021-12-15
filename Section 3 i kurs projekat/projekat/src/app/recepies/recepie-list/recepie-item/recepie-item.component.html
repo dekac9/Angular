@@ -1,9 +1,9 @@
-<a href="#" class="list-group-item clearfix" (click)="kliknuto()">
+<a style="cursor: pointer;" class="list-group-item clearfix" (click)="kliknuto()">
       <div class="pull-left">
         <h4 class="list-group-item-heading">{{recepie.name}}</h4>
         <p class="list-group-item-text">{{recepie.description}}</p>
       </div>
       <div class="pull-right">
-        <img [src]='recepie.imagePath' alt="{{recepie.name}}" class="img-responsive" style="max-height: 50px;">
+        <img [src]='recepie.imagePath' alt="{{recepie.name}}" class="img-fluid" style="max-height: 200px;">
       </div>
     </a>

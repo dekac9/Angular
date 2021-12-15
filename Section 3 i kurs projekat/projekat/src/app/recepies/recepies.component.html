@@ -1,12 +1,14 @@
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-7">
 <app-recepie-list ></app-recepie-list>
   </div>
-  <div class="col-md-7">
-<app-recepie-detail *ngIf="selektovanRecept; else infoText" [selektovan]='selektovanRecept'></app-recepie-detail>
+  <div class="col-md-5">
+<!-- <app-recepie-detail *ngIf="selektovanRecept; else infoText" [selektovan]='selektovanRecept'></app-recepie-detail>
 <ng-template #infoText>
   Unesi nesto
 </ng-template>
+ostalo je pre rada sa ruterom i children rutama -->
+<router-outlet></router-outlet>
 
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component} from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
 
@@ -11,7 +11,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 
 
 export class HeaderComponent{
-@Output() kliknutLinkEmiter=new EventEmitter<string>()
+//@Output() kliknutLinkEmiter=new EventEmitter<string>()
+//bilo j epotrebno pre rutiranja
 
 constructor(private ruter:Router, private ruta:ActivatedRoute){
 
@@ -21,15 +22,15 @@ constructor(private ruter:Router, private ruta:ActivatedRoute){
 
 // this.kliknutLinkEmiter.emit(pristiglo)s
 // console.log(pristiglo);
-  kliknutLink(pravacRutiranja:string){
+//   kliknutLink(pravacRutiranja:string){
 
-if(pravacRutiranja=='recepies'){
-  this.ruter.navigate(['recepies'], {relativeTo:this.ruta})
-}else if(pravacRutiranja=='shoppingList') {
-  this.ruter.navigate(['shoppingList'], {relativeTo:this.ruta})
+// if(pravacRutiranja=='recepies'){
+//   this.ruter.navigate(['recepies'], {relativeTo:this.ruta})
+// }else if(pravacRutiranja=='shoppingList') {
+//   this.ruter.navigate(['shoppingList'], {relativeTo:this.ruta})
 
 
     
-  }
-}
+ // }
+
 }

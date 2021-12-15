@@ -15,7 +15,7 @@ constructor(private ruter:Router){
 }
 
 ngOnInit(): void {
-this.ruter.navigate(['home'])
+//this.ruter.navigate([''])
   
 }
 

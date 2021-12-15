@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Ingredient } from 'src/app/shared/ingrediant.model';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
 
@@ -11,9 +12,11 @@ import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service
 export class RecepieDetailComponent implements OnInit {
 @Input() selektovan;
 
-  constructor(private shoppingListService:ShoppingListService) { }
+  constructor(private shoppingListService:ShoppingListService, private ruta:ActivatedRoute, private ruter:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    console.log(this.ruta.params);
+this.ruta.params.subscribe((data)=>{console.log(data);})
   }
 temp(){
   console.log("kliknuto!");
