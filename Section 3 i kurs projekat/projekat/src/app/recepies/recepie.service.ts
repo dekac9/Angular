@@ -22,5 +22,10 @@ private recepies:Recepie[]=[
 getRecepies(){
   return this.recepies.slice()
 }
+receptRutiranje(id){
+//console.log(id);
+ return this.recepies[id]
+
+}
   constructor() { }
 }

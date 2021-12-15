@@ -16,11 +16,13 @@ export class RecepieItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  kliknuto(){
-    this.recepieService.selektovanRecept.emit(this.recepie)
+  // 
+  //SKLONJENO KAD SAM UVEO RUTIRANJE
+  //kliknuto(){
+  //   this.recepieService.selektovanRecept.emit(this.recepie)
 //this.podatak.emit()
 //console.log("objeasscscscct");
 
-  }
+  
 
 }

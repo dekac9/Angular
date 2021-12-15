@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Ingredient } from 'src/app/shared/ingrediant.model';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
+import { RecepieService } from '../recepie.service';
 
 
 @Component({
@@ -10,17 +11,21 @@ import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service
   styleUrls: ['./recepie-detail.component.css']
 })
 export class RecepieDetailComponent implements OnInit {
-@Input() selektovan;
+//@Input() selektovan;
+selektovan
+  constructor(private shoppingListService:ShoppingListService, private ruta:ActivatedRoute, private ruter:Router, private recepieService:RecepieService) { }
 
-  constructor(private shoppingListService:ShoppingListService, private ruta:ActivatedRoute, private ruter:Router) { }
+temp:number
 
   ngOnInit(){
-    console.log(this.ruta.params);
-this.ruta.params.subscribe((data)=>{console.log(data);})
+    //console.log(this.selektovan);
+    this.temp=this.ruta.snapshot.params.id
+    console.log(this.ruta.snapshot.params.id);
+this.selektovan=this.recepieService.receptRutiranje(this.temp);
+console.log(this.selektovan);
+
   }
-temp(){
-  console.log("kliknuto!");
-}
+
 
 posaljiListi(){
  this.selektovan.ingredients.map((elem:Ingredient[])=>this.shoppingListService.dodaj(elem))
