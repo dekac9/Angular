@@ -3,8 +3,10 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recepies *ngIf="aktivnost==='recepies'|| aktivnost===''"></app-recepies>
-      <app-shopping-list *ngIf="aktivnost==='shoppingList'"></app-shopping-list>
+      <router-outlet></router-outlet>
+      
+      <!-- <app-recepies *ngIf="aktivnost==='recepies'|| aktivnost===''"></app-recepies>
+      <app-shopping-list *ngIf="aktivnost==='shoppingList'"></app-shopping-list> -->
     </div>
   </div>
 </div>

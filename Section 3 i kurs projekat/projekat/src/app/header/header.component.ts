@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+
 
 @Component({
   selector:'app-header',
@@ -6,12 +8,28 @@ import { Component, EventEmitter, Output } from "@angular/core";
   styleUrls:['./header.component.css']
 })
 
+
+
 export class HeaderComponent{
 @Output() kliknutLinkEmiter=new EventEmitter<string>()
 
-  kliknutLink(pristiglo:string){
+constructor(private ruter:Router, private ruta:ActivatedRoute){
 
-this.kliknutLinkEmiter.emit(pristiglo)
-console.log(pristiglo);
+}
+
+//   kliknutLink(pristiglo:string){
+
+// this.kliknutLinkEmiter.emit(pristiglo)s
+// console.log(pristiglo);
+  kliknutLink(pravacRutiranja:string){
+
+if(pravacRutiranja=='recepies'){
+  this.ruter.navigate(['recepies'], {relativeTo:this.ruta})
+}else if(pravacRutiranja=='shoppingList') {
+  this.ruter.navigate(['shoppingList'], {relativeTo:this.ruta})
+
+
+    
   }
+}
 }
