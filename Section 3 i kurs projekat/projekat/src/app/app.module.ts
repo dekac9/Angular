@@ -15,6 +15,7 @@ import { DropdownDirective } from './shared/dropdown.directives';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './landing/landing.component';
+import { RecepiesEditComponent } from './recepies-edit/recepies-edit.component';
 
 
 
@@ -30,7 +31,8 @@ import { LandingComponent } from './landing/landing.component';
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    LandingComponent
+    LandingComponent,
+    RecepiesEditComponent
 
   ],
   imports: [

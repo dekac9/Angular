@@ -17,7 +17,8 @@
       <ul class="dropdown-menu"
       >
         <li><a class="dropdown-item"  (click)='posaljiListi()'style="cursor: pointer">Dodaj sastojak na shoping listu</a></li>
-        <li><a class="dropdown-item" style="cursor: pointer">Ispravi recept</a></li>
+        <!-- <li><a class="dropdown-item" style="cursor: pointer" [routerLink]="[ 'edit']">Ispravi recept</a></li> MOZE I OVAKO-->
+        <li><a class="dropdown-item" style="cursor: pointer" (click)='onRecepieEdit()'>Ispravi recept</a></li>
         <li><a class="dropdown-item" style="cursor: pointer">Obrisi recept</a></li>
       </ul>
       

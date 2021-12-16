@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core"
 import { RouterModule, Routes } from "@angular/router"
 import { LandingComponent } from "./landing/landing.component"
+import { RecepiesEditComponent } from "./recepies-edit/recepies-edit.component"
 import { RecepieDetailComponent } from "./recepies/recepie-detail/recepie-detail.component"
 //import { RecepieItemComponent } from "./recepies/recepie-list/recepie-item/recepie-item.component"
 import { RecepiesComponent } from "./recepies/recepies.component"
@@ -12,7 +13,10 @@ const appRoutes:Routes=[
   {path:'recepies', component: RecepiesComponent, children:[
    // {path:'id',component:RecepieItemComponent},
     {path:'', component:LandingComponent},
-    {path:':id', component:RecepieDetailComponent}
+    {path:'new', component:RecepiesEditComponent},
+    {path:':id', component:RecepieDetailComponent},    
+    {path:':id/edit', component:RecepiesEditComponent},
+
   ]},
   {path:'shoppingList', component:ShoppingListComponent}
 ]
