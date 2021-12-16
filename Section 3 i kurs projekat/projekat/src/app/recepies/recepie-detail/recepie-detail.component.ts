@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Ingredient } from 'src/app/shared/ingrediant.model';
 import { ShoppingListService } from 'src/app/shopping-list/shopping-list.service';
 import { RecepieService } from '../recepie.service';
@@ -21,8 +21,16 @@ temp:number
     //console.log(this.selektovan);
     this.temp=this.ruta.snapshot.params.id
     console.log(this.ruta.snapshot.params.id);
-this.selektovan=this.recepieService.receptRutiranje(this.temp);
-console.log(this.selektovan);
+// this.selektovan=this.recepieService.receptRutiranje(this.temp);
+// console.log(this.selektovan);
+//GORNJI PRISTUP SE AKTIVIRA SAMO ON INIT, MORA DA SE MENJA LOGIKA
+
+this.ruta.params.subscribe((params:Params)=>{
+  this.selektovan=this.recepieService.receptRutiranje(params.id)
+  console.log(params);
+  console.log(params.id);
+  console.log(+params.id);
+})
 
   }
 

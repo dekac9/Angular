@@ -16,6 +16,7 @@ recepies:Recepie[]=[];
 
   ngOnInit() {
     this.recepies=this.recepieService.getRecepies()
+    
   }
 
 

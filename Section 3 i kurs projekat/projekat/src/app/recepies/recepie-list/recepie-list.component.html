@@ -7,7 +7,7 @@
 
 <div class="row" >
   <div class="col-xs-12">
-<app-recepie-item *ngFor='let elem of recepies' [recepie]='elem'><a [routerLink]="[ '/[elem]']">name</a></app-recepie-item>
+<app-recepie-item *ngFor='let elem of recepies, let i=index' [recepie]='elem' [temp]='i'></app-recepie-item>
   </div>
 </div>
 
