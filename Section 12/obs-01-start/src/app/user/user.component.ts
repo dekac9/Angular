@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { AppServiceService } from '../app-service.service';
 
 @Component({
   selector: 'app-user',
@@ -8,8 +9,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class UserComponent implements OnInit {
   id: number;
-provera:boolean=false
-  constructor(private route: ActivatedRoute) {
+
+  constructor(private route: ActivatedRoute, private servis:AppServiceService) {
   }
 
   ngOnInit() {
@@ -21,7 +22,7 @@ provera:boolean=false
 
   }
   kliknuto(){
-this.provera=!this.provera
-console.log(this.provera);
+    this.servis.aktiviranEmiter.next(true)
   }
+  
 }
