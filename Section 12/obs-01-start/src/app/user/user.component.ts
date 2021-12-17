@@ -22,6 +22,6 @@ provera:boolean=false
   }
   kliknuto(){
 this.provera=!this.provera
-console.log('provera iz klika');
+console.log(this.provera);
   }
 }
