@@ -8,20 +8,13 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class UserComponent implements OnInit {
   id: number;
-provera:boolean=false
+
   constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
-      console.log(params);
       this.id = +params.id;
     });
-    
-
-  }
-  kliknuto(){
-this.provera=!this.provera
-console.log('provera iz klika');
   }
 }
