@@ -1,4 +1,5 @@
-import { Component, OnInit,} from '@angular/core';
+import { Component, OnDestroy, OnInit,} from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Ingredient } from '../shared/ingrediant.model';
 import { ShoppingListService } from './shopping-list.service';
 
@@ -8,8 +9,8 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.css'],
 
 })
-export class ShoppingListComponent implements OnInit {
-
+export class ShoppingListComponent implements OnInit, OnDestroy {
+private subskripcija:Subscription
 ingredients:Ingredient[]=[
   // new Ingredient("grasak",100),
   // new Ingredient("pirinac",879)
@@ -23,7 +24,7 @@ ingredients:Ingredient[]=[
   ngOnInit(): void {
 
 this.ingredients=this.shopingList.dajSastojke()
-this.shopingList.promenjeniSastojci.subscribe(
+this.subskripcija=this.shopingList.promenjeniSastojci.subscribe(
   (ingredients:Ingredient[])=>{this.ingredients=ingredients}
 )
 // this.shopingList.dodato.subscribe(
@@ -34,6 +35,9 @@ this.shopingList.promenjeniSastojci.subscribe(
   // })
 
   
+  }
+  ngOnDestroy(): void {
+      this.subskripcija.unsubscribe()
   }
 
 }
