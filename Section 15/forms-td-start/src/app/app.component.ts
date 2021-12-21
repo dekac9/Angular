@@ -7,6 +7,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  prvoPitanje="pet"
+  odgovor=""
  // @ViewChild('f') novoIme:ElementRef
   suggestUserName() {
     const suggestedName = 'Superuser';

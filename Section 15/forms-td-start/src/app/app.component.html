@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div id="user-data">
-          <div class="form-group">
+          <di class="form-group">
             <label for="username">Username</label>
             <input 
             type="text" 
@@ -21,19 +21,31 @@
             class="form-control"
             ngModel name="email"
             required
-            email>
+            email
+            #email="ngModel">
+            <span  *ngIf="!email.valid && email.touched">Ukucaj ispravnu mail adresu!!!</span>
           </div>
+          <!-- <p *ngIf="">Ukucajte validan mail!!!</p> -->
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select 
           id="secret" 
           class="form-control"
-          ngModel name="secret">
+          ngModel name="secret"
+          [ngModel]="prvoPitanje">
             <option value="pet">Your first Pet?</option>
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+        <div class="form-group">
+          <textarea class="form-control" name="pitanjeOdgovor" 
+          id="pitanje" 
+          rows="3"
+          [(ngModel)]="odgovor"
+          ></textarea>
+        </div>
+        <p>Vas odgovor: {{odgovor}}</p>
         <button 
         class="btn btn-primary" 
         type="submit"
