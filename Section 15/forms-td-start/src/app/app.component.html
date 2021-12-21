@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div id="user-data" ngModelGroup name='dataGrupa' #dataGrupa="ngModelGroup">
+        <div id="user-data" ngModelGroup='dataGrupa' #dataGrupa="ngModelGroup">
           <div class="form-group" >
             <label for="username">Username</label>
             <input 
@@ -10,9 +10,10 @@
             id="username" 
             class="form-control"
             ngModel name="username"
+           [(ngModel)]="predlog"
             required>
           </div>
-          <button class="btn btn-default" type="button">Suggest an Username</button>
+          <button class="btn btn-default" type="button" (click)="suggestUserName()">Suggest an Username</button>
           <div class="form-group">
             <label for="email">Mail</label>
             <input 
@@ -65,6 +66,17 @@
         [disabled]="!f.valid"
         >Submit</button>
       </form>
+      <hr>
+      <div class="row" *ngIf="submitted">
+        <div class="col-xs-12">
+          <h3>Ukucani podaci:</h3>
+          <p>Username:{{user.username}}</p>
+          <p>Mail:{{user.email}}</p>
+          <p>Tajno pitanje:{{user.tajnoPitanje}}</p>
+          <p>Odgovor:{{user.odgovor}}</p>
+          <p>Pol:{{user.pol}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
