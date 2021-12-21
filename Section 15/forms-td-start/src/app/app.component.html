@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div id="user-data">
-          <di class="form-group">
+        <div id="user-data" ngModelGroup name='dataGrupa' #dataGrupa="ngModelGroup">
+          <div class="form-group" >
             <label for="username">Username</label>
             <input 
             type="text" 
@@ -26,7 +26,9 @@
             <span  *ngIf="!email.valid && email.touched">Ukucaj ispravnu mail adresu!!!</span>
           </div>
           <!-- <p *ngIf="">Ukucajte validan mail!!!</p> -->
+          
         </div>
+        <p *ngIf="!dataGrupa.valid && dataGrupa.touched"> Podaci nisu tacni</p>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
           <select 
@@ -38,6 +40,7 @@
             <option value="teacher">Your first teacher?</option>
           </select>
         </div>
+
         <div class="form-group">
           <textarea class="form-control" name="pitanjeOdgovor" 
           id="pitanje" 
@@ -46,6 +49,16 @@
           ></textarea>
         </div>
         <p>Vas odgovor: {{odgovor}}</p>
+        <div class="radio" *ngFor="let g of genders">
+          <label>
+            <input type="radio"
+            name="gender"
+            ngModel
+            [value]=g
+            required>
+            {{g}}
+          </label>
+        </div>
         <button 
         class="btn btn-primary" 
         type="submit"

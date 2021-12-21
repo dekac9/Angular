@@ -9,6 +9,8 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   prvoPitanje="pet"
   odgovor=""
+  genders=['male','female']
+
  // @ViewChild('f') novoIme:ElementRef
   suggestUserName() {
     const suggestedName = 'Superuser';
