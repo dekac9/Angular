@@ -13,6 +13,58 @@
            Upon submitting the form, you should simply print the Value of the Form to the Console.
            Optionally, display it in your template.
       -->
+      <form (ngSubmit)="onSubmit(celaForma)" #celaForma="ngForm">
+<div class="form-group" >
+      <label for="e-posta">Ukucaj mail</label>
+      <input 
+      type="email" 
+      id="e-posta"
+      class="form-control"
+      ngModel name="eposta"
+      email
+      required
+      >
+      <p *ngIf="upisanMail">Nije popunjjeno polje</p>
+<hr>
+<label for="lozinka">Ukucaj lozinku</label>
+      <input 
+      class="form-control"
+      type="password" 
+      id="lozinka"
+      ngModel name="tajnaLozinka"
+      required
+      >
+      </div>
+<hr>
+      <label for="pretplata">Ukucaj vrstu pretplate</label>
+      <select 
+      class="form-control" 
+      id="pretplata"
+      ngModel name="vrstaPretplate"
+      [ngModel]="placeholderSelekta">
+        <option value="basic">Basic</option>
+        <option value="advanced">Advanced</option>
+        <option value="pro">Pro</option>
+
+      </select>
+<hr>
+      
+      <button class="btn btn-primary"type="submit">Posalji</button>
+
+</form>
+<hr>
+<div *ngIf="ispravno">
+  <p >
+  TVOJ MAIL = {{sve.mail}},
+</p>
+<p >
+  TVOJA VRSTA PRETPLATE = {{sve.vrsta}},
+</p>
+<p >
+  TVOJ PASS = {{sve.pass}}
+</p>
+</div>
+
     </div>
   </div>
 </div>
