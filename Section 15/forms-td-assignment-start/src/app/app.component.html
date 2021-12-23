@@ -20,7 +20,8 @@
       type="email" 
       id="e-posta"
       class="form-control"
-      ngModel name="eposta"
+      ngModel name="email"
+      
       email
       required
       >
@@ -35,6 +36,7 @@
       required
       >
       </div>
+      <p *ngIf="upisanPass">Nije popunjjeno polje</p>
 <hr>
       <label for="pretplata">Ukucaj vrstu pretplate</label>
       <select 
