@@ -7,6 +7,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  pretplate=['basic','advanced','pro','semi-pro']
 upisanMail=false
 upisanPass=false
 placeholderSelekta="advanced"
@@ -34,7 +35,7 @@ this.ispravno=true
   this.sve.vrsta=celaforma.form.value.vrstaPretplate
   this.sve.pass=celaforma.form.value.tajnaLozinka
   console.log("ispravno");
-console.log(celaforma.form.value);
+console.log(celaforma.form);
   }else{
     console.log("nije ispravna forma")
   }

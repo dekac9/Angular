@@ -21,12 +21,14 @@
       id="e-posta"
       class="form-control"
       ngModel name="email"
+      #email=ngModel
       
       email
       required
       >
-      <p *ngIf="upisanMail">Nije popunjjeno polje</p>
+      <p *ngIf="!email.valid && email.touched">Nije popunjjeno polje</p>
 <hr>
+<div class="form-group" >
 <label for="lozinka">Ukucaj lozinku</label>
       <input 
       class="form-control"
@@ -37,23 +39,30 @@
       >
       </div>
       <p *ngIf="upisanPass">Nije popunjjeno polje</p>
+</div>      
 <hr>
+<div class="form-group" >
       <label for="pretplata">Ukucaj vrstu pretplate</label>
       <select 
       class="form-control" 
       id="pretplata"
       ngModel name="vrstaPretplate"
       [ngModel]="placeholderSelekta">
-        <option value="basic">Basic</option>
+      <option *ngFor="let item of pretplate" [value]="item">{{item}}</option>
+      <!-- NISAM HTEO OVAKO DA OSTAVIM -->
+        <!-- <option value="basic">Basic</option>
         <option value="advanced">Advanced</option>
-        <option value="pro">Pro</option>
+        <option value="pro">Pro</option> -->
 
       </select>
+    </div>
 <hr>
       
       <button class="btn btn-primary"type="submit">Posalji</button>
 
+
 </form>
+<p *ngIf="!celaForma.valid && celaForma.untouched">Cela forma nije ispravna</p>
 <hr>
 <div *ngIf="ispravno">
   <p >
