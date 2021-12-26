@@ -1,28 +1,35 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <form>
+      <form [formGroup]="forma" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="username">Username</label>
           <input
             type="text"
             id="username"
+            formControlName='username'
             class="form-control">
+            <p *ngIf="!forma.get('username').valid && forma.get('username').touched">Nije ispravno username</p>
         </div>
         <div class="form-group">
           <label for="email">email</label>
           <input
+          formControlName='email'
             type="text"
             id="email"
             class="form-control">
+            <p *ngIf="!forma.get('email').valid && forma.get('email').touched">Nije ispravno email</p>
         </div>
         <div class="radio" *ngFor="let gender of genders">
-          <label>
+          <label >
             <input
+            formControlName="gender"
               type="radio"
               [value]="gender">{{ gender }}
           </label>
+          
         </div>
+        <p *ngIf="!forma.valid && forma.touched">Nije ispravno FORMA</p>
         <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
