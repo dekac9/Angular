@@ -2,14 +2,15 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form [formGroup]="forma" (ngSubmit)="onSubmit()">
-        <div class="form-group">
+        <div formGroupName="userData">
+          <div class="form-group">
           <label for="username">Username</label>
           <input
             type="text"
             id="username"
             formControlName='username'
             class="form-control">
-            <p *ngIf="!forma.get('username').valid && forma.get('username').touched">Nije ispravno username</p>
+            <p *ngIf="!forma.get('userData.username').valid && forma.get('userData.username').touched">Nije ispravno username</p>
         </div>
         <div class="form-group">
           <label for="email">email</label>
@@ -18,8 +19,9 @@
             type="text"
             id="email"
             class="form-control">
-            <p *ngIf="!forma.get('email').valid && forma.get('email').touched">Nije ispravno email</p>
+            <p *ngIf="!forma.get('userData.email').valid && forma.get('userData.email').touched">Nije ispravno email</p>
         </div>
+      </div>        
         <div class="radio" *ngFor="let gender of genders">
           <label >
             <input
