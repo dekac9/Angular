@@ -21,6 +21,7 @@ onSubmit(celaforma:NgForm ){
 // this.upisanMail=true ?(!celaforma.form.controls.eposta.valid && celaforma.form.controls.eposta.untouched):false
 if(!celaforma.form.controls.email.valid && !celaforma.form.controls.email.untouched ){
 this.upisanMail=true
+
 }
 if(!celaforma.form.controls.tajnaLozinka.valid && !celaforma.form.controls.email.untouched ){
 this.upisanPass=true
