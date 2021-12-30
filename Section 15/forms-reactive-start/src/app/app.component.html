@@ -31,6 +31,17 @@
           </label>
           
         </div>
+
+<div formArrayName='hobbies'>
+  <h4>Tvoji hobiji</h4>
+  <button class="btn btn-primary" type="button" (clik)="onDodajHobi()">Unesi hobi</button>
+  <div class="form-group"
+  *ngFor="let hobbyControl of items">
+    <input type="text">
+  </div>
+</div>
+<hr>
+
         <p *ngIf="!forma.valid && forma.touched">Nije ispravno FORMA</p>
         <button class="btn btn-primary" type="submit">Submit</button>
       </form>
