@@ -11,8 +11,8 @@
             formControlName='username'
             class="form-control">
             <span *ngIf="!forma.get('userData.username').valid && forma.get     ('userData.username').touched">
-              <span *ngIf="!forma.get('userData.username').errors[imeZabranjeno]"> ZABRANJENO ime</span>
-              <span *ngIf="!forma.get('userData.username').errors[required]">Potrebno upisati ime</span>
+              <span *ngIf="forma.get('userData.username').errors['imeZabranjeno']"> ZABRANJENO ime</span>
+              <span *ngIf="forma.get('userData.username').errors['required']">Potrebno upisati ime</span>
             
             
           </span>
