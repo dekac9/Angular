@@ -10,7 +10,13 @@
             id="username"
             formControlName='username'
             class="form-control">
-            <p *ngIf="!forma.get('userData.username').valid && forma.get('userData.username').touched">Nije ispravno username</p>
+            <span *ngIf="!forma.get('userData.username').valid && forma.get     ('userData.username').touched">
+              <span *ngIf="!forma.get('userData.username').errors[imeZabranjeno]"> ZABRANJENO ime</span>
+              <span *ngIf="!forma.get('userData.username').errors[required]">Potrebno upisati ime</span>
+            
+            
+          </span>
+            
         </div>
         <div class="form-group">
           <label for="email">email</label>
@@ -32,13 +38,13 @@
           
         </div>
 
-<div formArrayName='hobbies'>
+<div formArrayName='hobbiji'>
   <h4>Tvoji hobiji</h4>
-  <button class="btn btn-primary" type="button" (clik)="onDodajHobi()">Unesi hobi</button>
-  <div class="form-group"
-  *ngFor="let hobbyControl of items">
-    <input type="text">
-  </div>
+  <button class="btn btn-default" type="button" (clik)="onDodajHobi()">Unesi hobi</button>
+  <!-- <div class="form-group"
+  *ngFor="let hobbyControl of getControls(); let i=index">
+    <input type="text" class="form-control" (formControlName)='i'>dsdfdf
+  </div> -->
 </div>
 <hr>
 
