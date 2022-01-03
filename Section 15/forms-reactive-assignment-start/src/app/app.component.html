@@ -14,6 +14,34 @@
 
           Upon submitting the form, simply print the value to the console
       -->
+      <form [formGroup]='formaMoja' (ngSubmit)="onSubmit()">
+        <label>Upisi projekat</label>
+        <input 
+        type="text" 
+        class="form-control"
+        formControlName="ime"
+        >
+        <p *ngIf="!formaMoja.valid && formaMoja.touched">Neispravno</p>
+        <hr>
+        <label>Upisi email</label>
+        <input         
+        class="form-control"
+        formControlName="mail">
+        <hr>
+        <label>Odaberi Status</label>
+        <select 
+        formControlName="status"
+        class="form-control"
+        >
+        <option *ngFor="let item of statusi" value='item'>{{item}}</option>
+        </select>
+        <hr>
+       <button
+        type="submit"
+        class='btn btn-primary'>Posalji</button>
+
+      </form>
+      
     </div>
   </div>
 </div>
