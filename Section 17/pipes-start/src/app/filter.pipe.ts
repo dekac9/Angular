@@ -5,8 +5,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: any, filtriranString: string, propName: string){
+    if(value.length === 0 || filtriranString===''){
+      return value
+    };
+    const tempArray=[]
+    for(const item of value){
+      
+      if(item[propName]===filtriranString){
+        tempArray.push(item)
+      }
+      
+    }
+    return tempArray;
   }
 
 }
