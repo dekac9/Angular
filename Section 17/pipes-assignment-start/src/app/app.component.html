@@ -1,3 +1,9 @@
+<!-- 
+  Zadatak:
+  1. reverse pipe, koja uzima sve instance type i reverse reci, medium u muidem,
+  2. sortiraj pomocu sort pipea po name unstance
+ -->
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
@@ -16,8 +22,8 @@
             class="badge">
             {{ server.status }}
           </span>
-          <strong>{{ server.name }}</strong> |
-          {{ server.instanceType | uppercase }} |
+          <strong>{{ server.name}}</strong> |
+          {{ server.instanceType | uppercase  |domaci}} |
           {{ server.started | date:'fullDate' | uppercase }}
         </li>
       </ul>
