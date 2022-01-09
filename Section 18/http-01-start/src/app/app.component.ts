@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import{ map }from 'rxjs/operators';
+import { Post } from './post.medel';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
     this.getPosts()
   }
 
-  onCreatePost(postData: { title: string; content: string }) {
+  onCreatePost(postData: Post) {
     // Send Http request
     //console.log(postData);
     this.http.post('https://ng-backend-projct-start-default-rtdb.firebaseio.com/posts.json',postData).subscribe(responseData=>{
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit {
   }
 
   private getPosts(){
-    this.http.get('https://ng-backend-projct-start-default-rtdb.firebaseio.com/posts.json').pipe(map(responseData=>{
+    this.http.get('https://ng-backend-projct-start-default-rtdb.firebaseio.com/posts.json').pipe(map((responseData:{[key:string]:Post})=>{
 
       const postsArray=[];
       
