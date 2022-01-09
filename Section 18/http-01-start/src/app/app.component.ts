@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import{ map }from 'rxjs/operators';
 import { Post } from './post.medel';
+import { PostServiceService } from './post-service.service';
 
 
 @Component({
@@ -11,8 +12,11 @@ import { Post } from './post.medel';
 })
 export class AppComponent implements OnInit {
   loadedPosts:Post []= [];
+isFetching=false
 
-  constructor(private http: HttpClient) {}
+  
+
+  constructor(private http: HttpClient, private postService:PostServiceService) {}
 
   ngOnInit() {
     this.getPosts()
@@ -21,34 +25,22 @@ export class AppComponent implements OnInit {
   onCreatePost(postData: Post) {
     // Send Http request
     //console.log(postData);
-    this.http.post('https://ng-backend-projct-start-default-rtdb.firebaseio.com/posts.json',postData).subscribe(responseData=>{
-      console.log(responseData);
-    })
+this.postService.onCreatePost(postData.title, postData.content)
   }
 
   onFetchPosts() {
-    this.getPosts()
+    this.postService.onFetchPosts()
+   // this.getPosts()
     // Send Http request
+
   }
 
   onClearPosts() {
-    // Send Http request
+    // Send Http requests
   }
 
   private getPosts(){
-    this.http.get('https://ng-backend-projct-start-default-rtdb.firebaseio.com/posts.json').pipe(map((responseData:{(key:string):Post})=>{
-
-      const postsArray:Post[]=[];
-      
-      for (const key in responseData) {
-if(responseData.hasOwnProperty(key)){
-postsArray.push({...responseData[key],id:key})
-}
-        
-
-      }
-      console.log(responseData);
-      return postsArray
-    })).subscribe(posts=>{this.loadedPosts=posts})
+    this.postService.onFetchPosts()
+    
   }
 }
