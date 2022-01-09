@@ -9,8 +9,7 @@ import { map } from 'rxjs/operators';
 export class PostServiceService {
 
   constructor(private http:HttpClient) { }
-  isFetching=false
-  loadedPosts:Post []= [];
+
 
 
 onCreatePost(naslov:string,sadrzaj:string){
@@ -20,9 +19,9 @@ this.http.post<{name:string}>('https://ng-backend-projct-start-default-rtdb.fire
     })
 }
 
-onFetchPosts(){
-  this.isFetching=true
-    this.http.get('https://ng-backend-projct-start-default-rtdb.firebaseio.com/posts.json').pipe(map((responseData:{(key:string):Post})=>{
+onFetchPostsService(){
+   
+  return  this.http.get('https://ng-backend-projct-start-default-rtdb.firebaseio.com/posts.json').pipe(map((responseData:{(key:string):Post})=>{
 
       const postsArray:Post[]=[];
       
@@ -35,9 +34,7 @@ onFetchPosts(){
       }
       console.log(responseData);
       return postsArray
-    })).subscribe(posts=>{
-      
-      })
+    }))
 }
 
 }

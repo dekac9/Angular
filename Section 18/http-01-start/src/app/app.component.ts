@@ -19,7 +19,10 @@ isFetching=false
   constructor(private http: HttpClient, private postService:PostServiceService) {}
 
   ngOnInit() {
-    this.getPosts()
+    this.isFetching=true
+    this.postService.onFetchPostsService().subscribe(post=>{
+      this.isFetching=false;
+      this.loadedPosts=post})
   }
 
   onCreatePost(postData: Post) {
@@ -29,7 +32,12 @@ this.postService.onCreatePost(postData.title, postData.content)
   }
 
   onFetchPosts() {
-    this.postService.onFetchPosts()
+    this.isFetching=true
+    this.postService.onFetchPostsService().subscribe(post=>{
+      this.isFetching=false;
+      this.loadedPosts=post
+
+    })
    // this.getPosts()
     // Send Http request
 
@@ -39,8 +47,8 @@ this.postService.onCreatePost(postData.title, postData.content)
     // Send Http requests
   }
 
-  private getPosts(){
-    this.postService.onFetchPosts()
+  // private getPosts(){
+  //   this.postService.onFetchPosts()
     
-  }
+  // }
 }
