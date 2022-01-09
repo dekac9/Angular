@@ -10,7 +10,7 @@ import { Post } from './post.medel';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  loadedPosts = [];
+  loadedPosts:Post []= [];
 
   constructor(private http: HttpClient) {}
 
@@ -36,9 +36,9 @@ export class AppComponent implements OnInit {
   }
 
   private getPosts(){
-    this.http.get('https://ng-backend-projct-start-default-rtdb.firebaseio.com/posts.json').pipe(map((responseData:{[key:string]:Post})=>{
+    this.http.get('https://ng-backend-projct-start-default-rtdb.firebaseio.com/posts.json').pipe(map((responseData:{(key:string):Post})=>{
 
-      const postsArray=[];
+      const postsArray:Post[]=[];
       
       for (const key in responseData) {
 if(responseData.hasOwnProperty(key)){
@@ -47,7 +47,8 @@ postsArray.push({...responseData[key],id:key})
         
 
       }
+      console.log(responseData);
       return postsArray
-    })).subscribe(posts=>{console.log(posts)})
+    })).subscribe(posts=>{this.loadedPosts=posts})
   }
 }
