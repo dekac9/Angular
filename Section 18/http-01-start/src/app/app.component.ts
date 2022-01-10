@@ -28,8 +28,19 @@ isFetching=false
   onCreatePost(postData: Post) {
     // Send Http request
     //console.log(postData);
-this.postService.onCreatePost(postData.title, postData.content)
-  }
+this.postService.onCreatePost(postData.title, postData.content);
+ this.postService.onFetchPostsService().subscribe(post=>{
+      this.isFetching=false;
+      this.loadedPosts=post
+
+    })
+
+    }
+  
+
+
+   
+  
 
   onFetchPosts() {
     this.isFetching=true
@@ -44,7 +55,11 @@ this.postService.onCreatePost(postData.title, postData.content)
   }
 
   onClearPosts() {
+    this.postService.onBrisanje().subscribe(()=>{
+      this.loadedPosts=[]
+    })
     // Send Http requests
+
   }
 
   // private getPosts(){
