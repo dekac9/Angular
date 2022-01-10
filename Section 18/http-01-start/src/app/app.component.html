@@ -27,7 +27,7 @@
           class="btn btn-primary"
           type="submit"
           [disabled]="!postForm.valid"
-          
+
         >
           Send Post
         </button>
@@ -53,8 +53,9 @@
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <!-- <p *ngIf="loadedPosts.length<1">No posts available!</p> -->
-      <p *ngIf="isFetching">Loading...</p>
+      <p *ngIf="isFetching && !greska">Loading...</p>
       <p *ngIf="loadedPosts.length<1 && !isFetching">No posts available!</p>
+      <p *ngIf="greska" class="alert alert-danger">Doslo je do greske tipa: {{ispisgreske}}</p>
       <ul class="list-group" *ngIf="loadedPosts.length>=1 && !isFetching">
         <li class="list-group-item" *ngFor="let item of loadedPosts">
           <h3>{{item.title}}</h3>

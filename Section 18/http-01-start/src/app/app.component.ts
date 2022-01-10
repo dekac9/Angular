@@ -12,7 +12,9 @@ import { PostServiceService } from './post-service.service';
 })
 export class AppComponent implements OnInit {
   loadedPosts:Post []= [];
-isFetching=false
+isFetching=false;
+greska=null
+ispisgreske=''
 
   
 
@@ -48,7 +50,11 @@ this.postService.onCreatePost(postData.title, postData.content);
       this.isFetching=false;
       this.loadedPosts=post
 
-    })
+    }, error =>{this.greska=true;
+    this.ispisgreske=error.error.error
+    console.log(this.ispisgreske);
+    ;});
+    
    // this.getPosts()
     // Send Http request
 
